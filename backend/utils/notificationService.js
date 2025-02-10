@@ -77,19 +77,20 @@ const sendEmail = async (email, subject, message) => {
 };
 
 //Function to send SMS notification
-const sendSMS = async (phone, message) => {
-    console.log(`📱 Attempting to send SMS to: ${phone}`);
+const sendWhatsAppMessage = async (phone, message) => {
+  console.log(`📲 Sending WhatsApp message to: ${phone}`);
 
-    try {
-        let messageResponse = await twilioClient.messages.create({
-            body: message,
-            from: process.env.TWILIO_PHONE,
-            to: phone
-        });
-        console.log(`✅ SMS sent: ${messageResponse.sid}`);
-    } catch (error) {
-        console.error(`❌ SMS error: ${error.message}`);
-    }
+  try {
+      let messageResponse = await twilioClient.messages.create({
+          from: 'whatsapp:+14155238886',
+          to: `whatsapp:${phone}`,
+          body: message
+      });
+
+      console.log(`✅ WhatsApp message sent: ${messageResponse.sid}`);
+  } catch (error) {
+      console.error(`❌ WhatsApp error: ${error.message}`);
+  }
 };
 
-module.exports = { sendEmail, sendSMS };
+module.exports = { sendEmail, sendWhatsAppMessage };

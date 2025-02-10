@@ -1,6 +1,6 @@
 const express = require('express');
 const Shipment = require('../models/Shipment');
-const { sendEmail, sendSMS } = require('../utils/notificationService'); // Import notification functions
+const { sendEmail, sendWhatsAppMessage } = require('../utils/notificationService'); // Import notification functions
 const authMiddleware = require('../middleware/authMiddleware');
 
 const router = express.Router();
@@ -38,7 +38,7 @@ router.put('/:trackingId', authMiddleware, async (req, res) => {
         // ✅ Send notification
         const message = `Your shipment (${shipment.trackingId}) is now ${status}.`;
         if (email) await sendEmail(email, "Shipment Update", message);
-        if (phone) await sendSMS(phone, message);
+        if (phone) await sendWhatsAppMessage(phone, message);
 
         res.json({ message: "Shipment updated and notification sent." });
     } catch (error) {
