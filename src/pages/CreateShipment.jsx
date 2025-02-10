@@ -36,61 +36,63 @@ export default function CreateShipment() {
 
   return (
     <div className="container-fluid mt-5 px-4">
-      <h2>Create Shipment</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
-      <form onSubmit={createShipment}>
-        <div className="mb-3">
-          <label className="form-label">Tracking ID</label>
-          <input
-            type="text"
-            className="form-control w-100"
-            value={trackingId}
-            onChange={(e) => setTrackingId(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Status</label>
-          <input
-            type="text"
-            className="form-control w-100"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Estimated Delivery</label>
-          <input
-            type="date"
-            className="form-control w-100"
-            value={estimatedDelivery}
-            onChange={(e) => setEstimatedDelivery(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Recipient Email</label>
-          <input
-            type="email"
-            className="form-control w-100"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Recipient Phone</label>
-          <input
-            type="tel"
-            className="form-control w-100"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Create Shipment
-        </button>
-      </form>
+      <div className="col-md-6 col-sm-10 mx-auto">
+        <h2>Create Shipment</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
+        <form onSubmit={createShipment}>
+          <div className="mb-3">
+            <label className="form-label">Tracking ID</label>
+            <input
+              type="text"
+              className="form-control w-100"
+              value={trackingId}
+              onChange={(e) => setTrackingId(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Status</label>
+            <input
+              type="text"
+              className="form-control w-100"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Estimated Delivery</label>
+            <input
+              type="date"
+              className="form-control w-100"
+              value={estimatedDelivery}
+              onChange={(e) => setEstimatedDelivery(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Recipient Email</label>
+            <input
+              type="email"
+              className="form-control w-100"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Recipient Phone</label>
+            <input
+              type="tel"
+              className="form-control w-100"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Create Shipment
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

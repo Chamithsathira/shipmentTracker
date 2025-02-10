@@ -50,33 +50,35 @@ export default function EditShipment() {
 
   return (
     <div className="container-fluid mt-5 px-4">
-      <h2>Edit Shipment</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
-      <form onSubmit={updateShipment}>
-        <div className="mb-3">
-          <label className="form-label">Status</label>
-          <input
-            type="text"
-            className="form-control"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Estimated Delivery</label>
-          <input
-            type="date"
-            className="form-control"
-            value={estimatedDelivery}
-            onChange={(e) => setEstimatedDelivery(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Update Shipment
-        </button>
-      </form>
+      <div className="col-md-6 col-sm-10 mx-auto">
+        <h2>Edit Shipment</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
+        <form onSubmit={updateShipment}>
+          <div className="mb-3">
+            <label className="form-label">Status</label>
+            <input
+              type="text"
+              className="form-control"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Estimated Delivery</label>
+            <input
+              type="date"
+              className="form-control"
+              value={estimatedDelivery}
+              onChange={(e) => setEstimatedDelivery(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Update Shipment
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

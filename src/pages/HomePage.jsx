@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <div
-      className="d-flex flex-column align-items-center justify-content-center vh-100 bg-light position-relative"
+      className="container-fluid d-flex flex-column align-items-center justify-content-center vh-100 bg-light position-relative"
       style={{
         backgroundImage:
           "url('http://gcccargopvtltd.in/assets/web_assets/images/tracking-shipment.jpg')",
@@ -12,7 +12,10 @@ export default function HomePage() {
         backgroundPosition: "center",
       }}
     >
-      <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>{" "}
+      <div
+        className="container-fluid position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-0"
+        style={{ pointerEvents: "none" }}
+      ></div>{" "}
       {/* Overlay */}
       <div className="col-md-6 col-sm-10 mx-auto text-center p-4 rounded shadow-lg bg-white">
         <h1 className="fw-bold text-primary mb-3">

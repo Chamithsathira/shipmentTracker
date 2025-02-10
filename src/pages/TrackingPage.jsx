@@ -27,7 +27,7 @@ export default function TrackingPage() {
   };
 
   return (
-    <div className="container-fluid mt-5 px-4 d-flex justify-content-center">
+    <div className="container-fluid mt-5 px-4">
       <div className="col-md-6 col-sm-10 mx-auto">
         <h2>Track Your Shipment</h2>
         <input
